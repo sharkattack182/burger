@@ -1,13 +1,41 @@
-<h1>EAT-DA-BURGER</h1>
+<div class="container">
+    <h1>Burgers</h1>
+    <div class="row">
+        <div class="col-md-6 float">
+            <h2>Burgers that are not devoured!</h2>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> cats/cat-block sleep=true}} <--figureout
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-6 float">
+            <h2>Burgers that have been devoured!</h2>
+            <ul>
+                {{#each burgers}}
+                {{#if !devoured}}
+                {{> cats/cat-block sleep=false}} <--figureout
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 
-<div class="container-flex">
+    <br>
+
     <div class="row">
         <div class="col-md-12">
-            <form id="createBurger" class="button-size">
-                <textarea type="text" name="burger"></textarea>
+            <h2>Add a Burger</h2>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="ca">Burger Name:</label>
+                    <input type="text" id="ca" name="name">
+                </div>
                 <button type="submit">Submit</button>
-              </form>
-              Enter a burger you want to eat then click the submit button!
+            </form>
         </div>
     </div>
 </div>
