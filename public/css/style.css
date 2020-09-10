@@ -1,0 +1,15 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+
+.float {
+    border-style: solid;
+    padding: 10px;
+}
+
+.new-burger {
+ border-style: solid;
+ padding: 30px;
+}
