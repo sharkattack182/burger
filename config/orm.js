@@ -5,7 +5,7 @@ var orm = {
   selectAll: function() {
     connection.query("SELECT * FROM burgers ORDER BY ID", function(err, result) {
       if (err) throw err;
-      console.log(result);
+      console.table(result);
     });
   },
 
@@ -14,7 +14,7 @@ var orm = {
     console.log(queryString);
     connection.query(queryString, [burger_name], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      console.table(result);
     });
   },
 
@@ -23,7 +23,7 @@ var orm = {
     "UPDATE burgers SET devoured = true WHERE id = ?";
     connection.query(queryString, [id], function(err, result) {
         if (err) throw err;
-        console.log(result);
+        console.table(result);
       }
     );
   }
