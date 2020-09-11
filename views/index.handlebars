@@ -1,23 +1,24 @@
-<div class="container">
-    <h1>Burgers</h1>
+<div class="container text-center">
+    <h1>Eat-Da-Burger</h1>
     <div class="row">
-        <div class="col-md-6 float">
+        <div class="col-md-5 float1 text-center">
             <h2>Burgers that are not devoured!</h2>
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                {{> cats/cat-block sleep=true}} <--figureout
+                <h3> {{burger_name}}</h3>
+                <button class="devour" data-id="{{id}}">Devour</button>
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
-        <div class="col-md-6 float">
+        <div class="col-md-5 float2 text-center">
             <h2>Burgers that have been devoured!</h2>
             <ul>
                 {{#each burgers}}
-                {{#if !devoured}}
-                {{> cats/cat-block sleep=false}} <--figureout
-                {{/if}}
+                    {{#if devoured}}
+                        <h3>{{burger_name}}</h3>
+                    {{/if}}
                 {{/each}}
             </ul>
         </div>
@@ -25,14 +26,14 @@
 
     <br>
 
-    <div class="row">
+    <div class="row new-burger">
         <div class="col-md-12">
             <h2>Add a Burger</h2>
             <form class="create-form">
 
                 <div class="form-group">
                     <label for="ca">Burger Name:</label>
-                    <input type="text" id="ca" name="name">
+                    <input type="text" id="ca" name="burger_name">
                 </div>
                 <button type="submit">Submit</button>
             </form>
