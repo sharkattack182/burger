@@ -38,10 +38,10 @@ var orm = {
     });
   },
 
-  updateOne: function(id, cb) {
+  updateOne: function(condition, cb) {
     var queryString =
-    "UPDATE burgers SET devoured = true WHERE id =" + objToSql(id);
-    connection.query(queryString, id, function(err, result) {
+    "UPDATE burgers SET devoured = true WHERE " + condition;
+    connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
